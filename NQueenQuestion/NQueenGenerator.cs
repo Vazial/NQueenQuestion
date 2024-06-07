@@ -16,7 +16,7 @@ namespace NQueenAnswer
 
             for (var count = 0; count < combination; ++count)
             {
-                var chessboard = new Chessboard(5);
+                var chessboard = new Chessboard();
                 chessboard.Mapping(count);
                 numberCombinationsList.Add(chessboard);
             }
@@ -40,20 +40,22 @@ namespace NQueenAnswer
         /// <returns></returns>
         private static bool IsMatch(Chessboard solution)
         {
-
             //Pointsの中から2つの座標を選んで、適当かどうかチェックする。(N > q > r >= 0)
             var solArray = solution.getLocations().ToArray();
-            for (var former = 1; former <= solution.size - 1; former++)
+            for (var former = 0; former <= 5 - 1; former++)
             {
-                for (var latter = 0; latter < former; latter++)
+                for (var latter = 0; latter <= 5 - 1; latter++)
                 {
-                    var diff = former - latter;
-                    if (solArray[former].x == solArray[latter].x           //同じ列に存在しないかチェック
-                    || solArray[former].x == solArray[latter].x - diff    //左斜め前に存在しないかチェック
-                    || solArray[former].x == solArray[latter].x + diff    //右斜め前存在しにないかチェック
-                    )
+                    if (latter != former)
                     {
-                        return false;
+                        var diff = former - latter;
+                        if (solArray[former].x == solArray[latter].x          //同じ列に存在しないかチェック
+                        || solArray[former].x == solArray[latter].x - diff    //左斜め前に存在しないかチェック
+                        || solArray[former].x == solArray[latter].x + diff    //右斜め前存在しにないかチェック
+                        )
+                        {
+                            return false;
+                        }
                     }
                 }
             }

@@ -26,31 +26,5 @@ namespace NQueenAnswer
         {
             return layout.Deserialize(size);
         }
-
-        public void RotateRight()
-        {
-            var newLocations = new List<Queen>();
-
-            foreach (var location in layout.Deserialize(size))
-            {
-                var newLocation = new Queen(size - (location.y + 1), location.x);
-                newLocations.Add(newLocation);
-            }
-
-            layout = new Layout(newLocations, size);
-        }
-
-        public void InvertMirror()
-        {
-            var newLocations = new List<Queen>();
-
-            foreach (var location in layout.Deserialize(size))
-            {
-                var newLocation = new Queen(size - (location.x + 1), location.y);
-                newLocations.Add(newLocation);
-            }
-
-            layout = new Layout(newLocations, size);
-        }
     }
 }
