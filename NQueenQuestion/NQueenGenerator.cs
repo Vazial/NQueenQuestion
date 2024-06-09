@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace NQueenAnswer
 {
+    /// <summary>
+    /// NQueenの解を生成するサービスクラス
+    /// </summary>
     public static class NQueenGenerator
     {
+        /// <summary>
+        /// NQueenの解となる座標を生成する
+        /// </summary>
+        /// <returns>NQueenの解のリスト</returns>
         public static List<Chessboard> Generate()
         {
             var numberCombinationsList = new List<Chessboard>();
@@ -34,14 +41,14 @@ namespace NQueenAnswer
         }
 
         /// <summary>
-        /// 座標の組が条件を満たすか判定する。
+        /// NQueenの解として適切であるか判定する。
         /// </summary>
-        /// <param name="solution">座標の組</param>
-        /// <returns></returns>
+        /// <param name="solution">NQueen座標の組</param>
+        /// <returns>NQueenの解として適切であればtrue</returns>
         private static bool IsMatch(Chessboard solution)
         {
             //Pointsの中から2つの座標を選んで、適当かどうかチェックする。(N > q > r >= 0)
-            var solArray = solution.getLocations().ToArray();
+            var solArray = solution.GetLocations().ToArray();
             for (var former = 0; former <= 5 - 1; former++)
             {
                 for (var latter = 0; latter <= 5 - 1; latter++)
