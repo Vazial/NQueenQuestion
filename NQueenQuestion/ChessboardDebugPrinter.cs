@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NQueenAnswer
+namespace NQueenQuestion
 {
     /// <summary>
     /// NQueenの解をデバッグ出力するサービスクラス

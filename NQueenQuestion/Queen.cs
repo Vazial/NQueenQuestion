@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NQueenAnswer
+namespace NQueenQuestion
 {
     /// <summary>
     /// チェス盤上のクイーンを表現するクラス

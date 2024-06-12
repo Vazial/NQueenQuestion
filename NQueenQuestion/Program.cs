@@ -2,7 +2,8 @@
 using System.Drawing;
 using System.Text;
 
-namespace NQueenAnswer {
+namespace NQueenQuestion
+{
     ///*************************************************************************///
     ///*** 小問1 Nという変数を定義して、汎用化しよう。                       ***///
     ///*** 小問2 NQueenGenerator.IsMatch()を簡略化して、処理を効率化しよう。 ***///
