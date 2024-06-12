@@ -49,9 +49,9 @@ namespace NQueenQuestion
         {
             //Pointsの中から2つの座標を選んで、適当かどうかチェックする。(N > q > r >= 0)
             var solArray = solution.GetLocations().ToArray();
-            for (var former = 0; former <= 5 - 1; former++)
+            for (var former = 0; former <= solution.size - 1; former++)
             {
-                for (var latter = 0; latter <= 5 - 1; latter++)
+                for (var latter = 0; latter <= solution.size - 1; latter++)
                 {
                     if (latter != former)
                     {
